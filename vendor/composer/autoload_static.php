@@ -13,10 +13,7 @@ class ComposerStaticInit9a4efc80aa5aed346ce0b45bb10bb51b
         '8e92226780215d0ec758aa7b73e0ede9' => __DIR__ . '/..' . '/open-telemetry/context/fiber/initialize_fiber_handler.php',
         'c7b4a5d8b94d270f0f9a84f81e1dd63d' => __DIR__ . '/..' . '/open-telemetry/api/Trace/functions.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
-        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
-        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         'c695cb998ba36e4bafc3d028efc7d113' => __DIR__ . '/..' . '/open-telemetry/sdk/Common/Util/functions.php',
         'd991bdbfe253499825156f17c4a721db' => __DIR__ . '/..' . '/open-telemetry/sdk/Logs/Exporter/_register.php',
         '01d424d2624f29a2eef00b09eb00935e' => __DIR__ . '/..' . '/open-telemetry/sdk/Metrics/MetricExporter/_register.php',
@@ -24,8 +21,11 @@ class ComposerStaticInit9a4efc80aa5aed346ce0b45bb10bb51b
         '2cc49ecec7e065b3a5423e964c0275e6' => __DIR__ . '/..' . '/open-telemetry/sdk/Trace/SpanExporter/_register.php',
         '062120a429d7568eacd495a8c34fcf09' => __DIR__ . '/..' . '/open-telemetry/sdk/Common/Dev/Compatibility/_load.php',
         '88e3b63cfb48eb8ea316a8a85a5f5c5f' => __DIR__ . '/..' . '/open-telemetry/sdk/_autoload.php',
+        '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '157bbd0180425c7142fbaf1b1646bec3' => __DIR__ . '/..' . '/open-telemetry/exporter-otlp/_register.php',
-        'dfdb213a5229dd55e621055ca8fd74e1' => __DIR__ . '/..' . '/open-telemetry/opentelemetry-auto-slim/_register.php',
+        '88ba729344893fbac0923a8952a95d11' => __DIR__ . '/..' . '/open-telemetry/transport-grpc/_register.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -35,6 +35,9 @@ class ComposerStaticInit9a4efc80aa5aed346ce0b45bb10bb51b
             'Symfony\\Polyfill\\Php81\\' => 23,
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
+            'Symfony\\Contracts\\Service\\' => 26,
+            'Symfony\\Contracts\\HttpClient\\' => 29,
+            'Symfony\\Component\\HttpClient\\' => 29,
             'Slim\\Psr7\\' => 10,
             'Slim\\' => 5,
         ),
@@ -52,22 +55,24 @@ class ComposerStaticInit9a4efc80aa5aed346ce0b45bb10bb51b
             'OpenTelemetry\\SemConv\\' => 22,
             'OpenTelemetry\\SDK\\' => 18,
             'OpenTelemetry\\Contrib\\Otlp\\' => 27,
-            'OpenTelemetry\\Contrib\\Instrumentation\\Slim\\' => 43,
+            'OpenTelemetry\\Contrib\\Grpc\\' => 27,
             'OpenTelemetry\\Context\\' => 22,
             'OpenTelemetry\\API\\' => 18,
         ),
+        'M' => 
+        array (
+            'Monolog\\' => 8,
+        ),
         'H' => 
         array (
-            'Http\\Promise\\' => 13,
             'Http\\Discovery\\' => 15,
-            'Http\\Client\\' => 12,
-            'Http\\Adapter\\Guzzle7\\' => 21,
         ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+            'Grpc\\' => 5,
             'Google\\Protobuf\\' => 16,
             'GPBMetadata\\Opentelemetry\\' => 26,
             'GPBMetadata\\Google\\Protobuf\\' => 28,
@@ -95,6 +100,18 @@ class ComposerStaticInit9a4efc80aa5aed346ce0b45bb10bb51b
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Symfony\\Contracts\\Service\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/service-contracts',
+        ),
+        'Symfony\\Contracts\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-client-contracts',
+        ),
+        'Symfony\\Component\\HttpClient\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/http-client',
         ),
         'Slim\\Psr7\\' => 
         array (
@@ -142,9 +159,9 @@ class ComposerStaticInit9a4efc80aa5aed346ce0b45bb10bb51b
         array (
             0 => __DIR__ . '/..' . '/open-telemetry/exporter-otlp',
         ),
-        'OpenTelemetry\\Contrib\\Instrumentation\\Slim\\' => 
+        'OpenTelemetry\\Contrib\\Grpc\\' => 
         array (
-            0 => __DIR__ . '/..' . '/open-telemetry/opentelemetry-auto-slim/src',
+            0 => __DIR__ . '/..' . '/open-telemetry/transport-grpc',
         ),
         'OpenTelemetry\\Context\\' => 
         array (
@@ -154,21 +171,13 @@ class ComposerStaticInit9a4efc80aa5aed346ce0b45bb10bb51b
         array (
             0 => __DIR__ . '/..' . '/open-telemetry/api',
         ),
-        'Http\\Promise\\' => 
+        'Monolog\\' => 
         array (
-            0 => __DIR__ . '/..' . '/php-http/promise/src',
+            0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
         'Http\\Discovery\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/discovery/src',
-        ),
-        'Http\\Client\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/php-http/httplug/src',
-        ),
-        'Http\\Adapter\\Guzzle7\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/php-http/guzzle7-adapter/src',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -181,6 +190,10 @@ class ComposerStaticInit9a4efc80aa5aed346ce0b45bb10bb51b
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'Grpc\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/grpc/grpc/src/lib',
         ),
         'Google\\Protobuf\\' => 
         array (
